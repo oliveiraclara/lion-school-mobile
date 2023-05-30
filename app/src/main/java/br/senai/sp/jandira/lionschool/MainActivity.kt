@@ -1,23 +1,32 @@
 package br.senai.sp.jandira.lionschool
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import br.senai.sp.jandira.lionschool.model.CoursesList
+import br.senai.sp.jandira.lionschool.service.RetrofitFactory
 import br.senai.sp.jandira.lionschool.ui.theme.LionSchoolTheme
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +53,13 @@ fun Greeting(name: String) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun HomeScreen() {
+
+    val context = LocalContext.current
+
+    var results by remember {
+        mutableStateOf(listOf<br.senai.sp.jandira.lionschool.model.Courses>())
+    }
+
     LionSchoolTheme {
         Surface(Modifier.fillMaxSize()) {
             Column(
@@ -51,7 +67,11 @@ fun HomeScreen() {
                     .fillMaxWidth(),
             verticalArrangement = Arrangement.SpaceBetween) {
                 Icon(
-                    modifier = Modifier.padding(8.dp, 8.dp),
+                    modifier = Modifier.padding(8.dp, 8.dp)
+                        .clickable {
+                            val openSupport = Intent(context, Support::class.java)
+                            context.startActivity(openSupport)
+                        },
                     painter = painterResource(id = R.drawable.support_24),
                     contentDescription = stringResource(id = R.string.support)
                 )
@@ -69,7 +89,27 @@ fun HomeScreen() {
                     )
                     Spacer(modifier = Modifier.height(20.dp))
                     Column(modifier = Modifier.fillMaxWidth(),horizontalAlignment = Alignment.CenterHorizontally) {
-                        Button(onClick = { /*TODO*/ },
+                        Button(onClick = {
+//                            // chamada para a API
+//                            val call = RetrofitFactory().getCourses().getCourse("ds")
+//
+//                            call.enqueue(object : Callback<CoursesList> {
+//
+//
+//                                override fun onResponse(
+//                                    call: Call<CoursesList>,
+//                                    response: Response<CoursesList>,
+//                                ) {
+//                                    results = response.body()!!.alunos
+//
+//                                }
+//
+//                                override fun onFailure(call: Call<CoursesList>, t: Throwable) {
+//                                    Log.i("ds2m", "onFailure: ${t.message} ")
+//                                }
+//
+//                            })
+                        },
                             modifier= Modifier
                                 .width(187.dp)
                                 .height(48.dp),
@@ -111,4 +151,4 @@ fun HomeScreen() {
             }
         }
     }
-}
+

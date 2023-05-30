@@ -1,16 +1,18 @@
 package br.senai.sp.jandira.lionschool
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -44,21 +46,35 @@ fun Greeting2(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun Students() {
+
+    val context = LocalContext.current
+
+
     LionSchoolTheme {
         Surface(modifier = Modifier.fillMaxSize()) {
             Column(modifier = Modifier.fillMaxWidth()) {
-                Row(modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(8.dp, 8.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.arrow_back_24),
-                        contentDescription = stringResource(id = R.string.support)
-                    )
-                    Text(text = "REDES")
+                Card(backgroundColor = Color(245, 245, 245),
+                modifier = Modifier.height(200.dp)) {
+                    Row(modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp, 8.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween) {
+                        Icon(
+                            modifier = Modifier
+                                .clickable {
+                            val backHome = Intent(context, MainActivity::class.java)
+                            context.startActivity(backHome)
+                        },
+                            painter = painterResource(id = R.drawable.arrow_back_24),
+                            contentDescription = stringResource(id = R.string.support)
+                        )
+                        Text(text = "REDES")
+                    }
+                    Column() {
+
+                    }
                 }
-                Column() {
+                Card(shape = RoundedCornerShape(15.dp)) {
 
                 }
             }
