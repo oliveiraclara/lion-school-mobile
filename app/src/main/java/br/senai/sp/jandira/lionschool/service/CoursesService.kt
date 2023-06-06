@@ -12,10 +12,7 @@ interface CoursesService {
     @GET("cursos")
     fun getCourses(): Call<CoursesList>
 
-    @GET("alunos/curso?sigla={sigla}")
+    @GET("alunos?curso={sigla}")
     fun getAlunosCursos(@Query("sigla") sigla:String): Call<Student>
 
-
-//    @GET("alunos?cursos={rds}")
-//    fun getCourseRds(@Path("sigla") sigla: String): Call<Courses>
 }
