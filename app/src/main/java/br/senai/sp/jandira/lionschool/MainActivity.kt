@@ -8,6 +8,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -67,29 +69,29 @@ fun HomeScreen() {
                 Modifier
                     .fillMaxWidth(),
                 verticalArrangement = Arrangement.SpaceBetween
-            ) {
+            ){
                 Icon(
                     modifier = Modifier.padding(8.dp, 8.dp)
-                        .clickable {
+                        .clickable{
                             val openSupport = Intent(context, Support::class.java)
                             context.startActivity(openSupport)
                         },
-                    painter = painterResource(id = R.drawable.support_24),
-                    contentDescription = stringResource(id = R.string.support)
+                    painter =painterResource(id = R.drawable.support_24),
+                    contentDescription =stringResource(id = R.string.support)
                 )
                 Column(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.End,
                     verticalArrangement = Arrangement.Center
-                ) {
+                ){
                     Image(
-                        painter = painterResource(id = R.drawable.background),
-                        contentDescription = stringResource(id = R.string.app_name)
+                        painter =painterResource(id = R.drawable.background),
+                        contentDescription =stringResource(id = R.string.app_name)
                     )
                 }
-                Column(modifier = Modifier.padding(8.dp, 50.dp)) {
+                Column(modifier = Modifier.padding(8.dp, 50.dp)){
                     Text(
-                        text = stringResource(id = R.string.lion_school),
+                        text =stringResource(id = R.string.lion_school),
                         fontWeight = FontWeight.Bold,
                         fontSize = 24.sp
                     )
@@ -97,25 +99,9 @@ fun HomeScreen() {
                     Column(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
+                    ){
                         Button(
-                            onClick = {
-//                            // chamada para a API
-
-                                val call = RetrofitFactory().getCourseService().getCourses()
-
-                                call.enqueue(object : Callback<CoursesList> {
-                                    override fun onResponse(
-                                        call: Call<CoursesList>, response: Response<CoursesList>
-                                    ) {
-                                        curso = response.body()!!.curso
-                                    }
-
-                                    override fun onFailure(call: Call<CoursesList>, t: Throwable) {
-                                        Log.i("ds2m", "onFailure: ${t.message}")
-                                    }
-
-                                })
+                            onClick ={
                                 val openSupport = Intent(context, Courses::class.java)
                                 context.startActivity(openSupport)
                             },
@@ -123,23 +109,23 @@ fun HomeScreen() {
                                 .width(187.dp)
                                 .height(48.dp),
                             colors = ButtonDefaults.buttonColors(Color(223, 251, 213)),
-                            shape = RoundedCornerShape(15.dp)
-                        ) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
+                            shape =RoundedCornerShape(15.dp)
+                        ){
+                            Row(verticalAlignment = Alignment.CenterVertically){
                                 Text(
                                     text = "DS",
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 24.sp
                                 )
                                 Icon(
-                                    painter = painterResource(id = R.drawable.arrow_forward_24),
+                                    painter =painterResource(id = R.drawable.arrow_forward_24),
                                     contentDescription = ""
                                 )
                             }
                         }
                         Spacer(modifier = Modifier.height(20.dp))
                         Button(
-                            onClick = {
+                            onClick ={
                                 val openSupport = Intent(context, Courses::class.java)
                                 context.startActivity(openSupport)
                             },
@@ -147,16 +133,16 @@ fun HomeScreen() {
                                 .width(187.dp)
                                 .height(48.dp),
                             colors = ButtonDefaults.buttonColors(Color(223, 251, 213)),
-                            shape = RoundedCornerShape(15.dp)
-                        ) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
+                            shape =RoundedCornerShape(15.dp)
+                        ){
+                            Row(verticalAlignment = Alignment.CenterVertically){
                                 Text(
                                     text = "RDS",
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 24.sp
                                 )
                                 Icon(
-                                    painter = painterResource(id = R.drawable.arrow_forward_24),
+                                    painter =painterResource(id = R.drawable.arrow_forward_24),
                                     contentDescription = ""
                                 )
                             }
