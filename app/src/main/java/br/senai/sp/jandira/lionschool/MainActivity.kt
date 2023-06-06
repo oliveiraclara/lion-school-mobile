@@ -54,11 +54,12 @@ fun Greeting(name: String) {
 @Composable
 fun HomeScreen() {
 
-    val context = LocalContext.current
-
-    var results by remember {
+    var curso by remember {
         mutableStateOf(listOf<br.senai.sp.jandira.lionschool.model.Courses>())
     }
+
+    val context = LocalContext.current
+
 
     LionSchoolTheme {
         Surface(Modifier.fillMaxSize()) {
@@ -100,24 +101,21 @@ fun HomeScreen() {
                         Button(
                             onClick = {
 //                            // chamada para a API
-//                            val call = RetrofitFactory().getCourses().getCourse("ds")
-//
-//                            call.enqueue(object : Callback<CoursesList> {
-//
-//
-//                                override fun onResponse(
-//                                    call: Call<CoursesList>,
-//                                    response: Response<CoursesList>,
-//                                ) {
-//                                    results = response.body()!!.alunos
-//
-//                                }
-//
-//                                override fun onFailure(call: Call<CoursesList>, t: Throwable) {
-//                                    Log.i("ds2m", "onFailure: ${t.message} ")
-//                                }
-//
-//                            })
+
+                                val call = RetrofitFactory().getCourseService().getCourses()
+
+                                call.enqueue(object : Callback<CoursesList> {
+                                    override fun onResponse(
+                                        call: Call<CoursesList>, response: Response<CoursesList>
+                                    ) {
+                                        curso = response.body()!!.curso
+                                    }
+
+                                    override fun onFailure(call: Call<CoursesList>, t: Throwable) {
+                                        Log.i("ds2m", "onFailure: ${t.message}")
+                                    }
+
+                                })
                                 val openSupport = Intent(context, Courses::class.java)
                                 context.startActivity(openSupport)
                             },
@@ -169,6 +167,7 @@ fun HomeScreen() {
         }
     }
 }
+
 
 
 

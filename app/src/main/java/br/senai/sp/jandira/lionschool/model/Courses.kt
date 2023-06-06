@@ -1,6 +1,8 @@
 package br.senai.sp.jandira.lionschool.model
 
 data class Courses(
-    val curso: String,
-    val sigla: String
+
+    val icon: String,
+    val nome: String,
+    val sigla: String,
 )

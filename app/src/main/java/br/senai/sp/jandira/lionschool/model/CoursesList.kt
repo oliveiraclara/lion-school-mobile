@@ -1,7 +1,7 @@
 package br.senai.sp.jandira.lionschool.model
 
-data class CoursesList (
+data class CoursesList(
 
-    val alunos: List<Courses>
-
-    )
+val curso: List<Courses>,
+val alunos: List<Student>
+)
