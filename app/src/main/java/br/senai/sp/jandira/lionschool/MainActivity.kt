@@ -118,6 +118,8 @@ fun HomeScreen() {
 //                                }
 //
 //                            })
+                                val openSupport = Intent(context, Courses::class.java)
+                                context.startActivity(openSupport)
                             },
                             modifier = Modifier
                                 .width(187.dp)
@@ -139,7 +141,10 @@ fun HomeScreen() {
                         }
                         Spacer(modifier = Modifier.height(20.dp))
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = {
+                                val openSupport = Intent(context, Courses::class.java)
+                                context.startActivity(openSupport)
+                            },
                             modifier = Modifier
                                 .width(187.dp)
                                 .height(48.dp),
@@ -164,4 +169,6 @@ fun HomeScreen() {
         }
     }
 }
+
+
 
