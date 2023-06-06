@@ -52,33 +52,97 @@ fun Contacts() {
 
     LionSchoolTheme {
         Surface(modifier = Modifier.fillMaxSize()) {
-            Column(modifier = Modifier.fillMaxWidth()) {
-                Card(backgroundColor = Color(223, 251, 213),
-                    modifier = Modifier.height(200.dp)) {
-                    Row(modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp)) {
+            Column(modifier = Modifier.fillMaxWidth()){
+                Column(
+                    modifier = Modifier.fillMaxWidth()
+                ){
+                    Card(
+                        backgroundColor =Color(223, 251, 213),
+                        shape =RoundedCornerShape(bottomStart = 20.dp, bottomEnd = 20.dp)
+                    ){
                         Icon(
                             modifier = Modifier
-                                .clickable {
+                                .clickable{
                                     val backHome = Intent(context, MainActivity::class.java)
                                     context.startActivity(backHome)
                                 },
-                            painter = painterResource(id = R.drawable.arrow_back_24),
-                            contentDescription = stringResource(id = R.string.support)
+                            painter =painterResource(id = R.drawable.arrow_back_24),
+                            contentDescription =stringResource(id = R.string.support)
                         )
-                        Text(
-                            text = "SUPPORT")
-                    }
-                    Column() {
+                        Spacer(modifier = Modifier.height(200.dp))
 
+                        Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally){
+                            Text(
+                                text =stringResource(id = R.string.support),
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 44.sp,
+
+                                )
+                        }
                     }
+                    Spacer(modifier = Modifier.height(80.dp))
+                    Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,){
+                        Row(){
+                            Icon(
+                                painter =painterResource(id = R.drawable.phone_24),
+                                contentDescription = ""
+                            )
+                            Text(text =stringResource(id = R.string.phone))
+                        }
+                        Spacer(modifier = Modifier.height(20.dp))
+                        Row(){
+                            Icon(
+                                painter =painterResource(id = R.drawable.email_24),
+                                contentDescription = ""
+                            )
+                            Text(text =stringResource(id = R.string.email))
+                        }
+                        Spacer(modifier = Modifier.height(20.dp))
+                        Row(){
+                            Icon(
+                                painter =painterResource(id = R.drawable.location_24),
+                                contentDescription = ""
+                            )
+                            Text(text =stringResource(id = R.string.address))
+                        }
+                    }
+
+
                 }
-                Card(shape = RoundedCornerShape(20.dp, 20.dp),
-                modifier= Modifier.fillMaxWidth().fillMaxSize()) {
-
+                Spacer(modifier = Modifier.height(200.dp))
+                Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally){
+                    Text(
+                        text =stringResource(id = R.string.social_media),
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 34.sp,
+                    )
+                    Row(
+                        modifier = Modifier.padding(40.dp),
+                    ){
+//                        Icon(
+//                            modifier = Modifier.size(35.dp),
+//                            painter =painterResource(id = R.drawable.youtube),
+//                            contentDescription = "",
+//
+//                            )
+//                        Icon(
+//                            modifier = Modifier.size(35.dp),
+//                            painter =painterResource(id = R.drawable.instagram),
+//                            contentDescription = ""
+//                        )
+//                        Icon(
+//                            modifier = Modifier.size(35.dp),
+//                            painter =painterResource(id = R.drawable.twitter),
+//                            contentDescription = ""
+//                        )
+//                        Icon(
+//                            modifier = Modifier.size(35.dp),
+//                            painter =painterResource(id = R.drawable.facebook),
+//                            contentDescription = ""
+//                        )
+                    }
                 }
             }
         }
+        }
     }
-}

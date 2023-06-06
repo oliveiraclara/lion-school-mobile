@@ -53,29 +53,33 @@ fun Students() {
     LionSchoolTheme {
         Surface(modifier = Modifier.fillMaxSize()) {
             Column(modifier = Modifier.fillMaxWidth()) {
-                Card(backgroundColor = Color(245, 245, 245),
-                modifier = Modifier.height(200.dp)) {
-                    Row(modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp, 8.dp),
-                        horizontalArrangement = Arrangement.SpaceBetween) {
-                        Icon(
-                            modifier = Modifier
-                                .clickable {
-                            val backHome = Intent(context, MainActivity::class.java)
-                            context.startActivity(backHome)
-                        },
-                            painter = painterResource(id = R.drawable.arrow_back_24),
-                            contentDescription = stringResource(id = R.string.support)
-                        )
-                        Text(text = "REDES")
+                Column(
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Card(
+                        modifier= Modifier.height(200.dp),
+                        backgroundColor = Color(245, 245, 245),
+                        shape = RoundedCornerShape(bottomStart = 20.dp, bottomEnd = 20.dp)
+                    ) {
+                        Row(modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp, 8.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween){
+                            Icon(
+                                modifier = Modifier
+                                    .clickable{
+                                        val backHome = Intent(context, MainActivity::class.java)
+                                        context.startActivity(backHome)
+                                    },
+                                painter =painterResource(id = R.drawable.arrow_back_24),
+                                contentDescription =stringResource(id = R.string.support)
+                            )
+                            Text(text = "REDES")
+                        }
                     }
                     Column() {
-
+                        
                     }
-                }
-                Card(shape = RoundedCornerShape(15.dp)) {
-
                 }
             }
         }

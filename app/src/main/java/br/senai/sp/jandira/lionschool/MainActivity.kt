@@ -65,7 +65,8 @@ fun HomeScreen() {
             Column(
                 Modifier
                     .fillMaxWidth(),
-            verticalArrangement = Arrangement.SpaceBetween) {
+                verticalArrangement = Arrangement.SpaceBetween
+            ) {
                 Icon(
                     modifier = Modifier.padding(8.dp, 8.dp)
                         .clickable {
@@ -76,10 +77,14 @@ fun HomeScreen() {
                     contentDescription = stringResource(id = R.string.support)
                 )
                 Column(
-                    modifier = Modifier.fillMaxWidth(),horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.Center) {
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.End,
+                    verticalArrangement = Arrangement.Center
+                ) {
                     Image(
                         painter = painterResource(id = R.drawable.background),
-                        contentDescription = stringResource(id = R.string.app_name))
+                        contentDescription = stringResource(id = R.string.app_name)
+                    )
                 }
                 Column(modifier = Modifier.padding(8.dp, 50.dp)) {
                     Text(
@@ -88,8 +93,12 @@ fun HomeScreen() {
                         fontSize = 24.sp
                     )
                     Spacer(modifier = Modifier.height(20.dp))
-                    Column(modifier = Modifier.fillMaxWidth(),horizontalAlignment = Alignment.CenterHorizontally) {
-                        Button(onClick = {
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Button(
+                            onClick = {
 //                            // chamada para a API
 //                            val call = RetrofitFactory().getCourses().getCourse("ds")
 //
@@ -109,15 +118,16 @@ fun HomeScreen() {
 //                                }
 //
 //                            })
-                        },
-                            modifier= Modifier
+                            },
+                            modifier = Modifier
                                 .width(187.dp)
                                 .height(48.dp),
                             colors = ButtonDefaults.buttonColors(Color(223, 251, 213)),
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
-                                Text(text = "DS",
+                                Text(
+                                    text = "DS",
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 24.sp
                                 )
@@ -128,15 +138,17 @@ fun HomeScreen() {
                             }
                         }
                         Spacer(modifier = Modifier.height(20.dp))
-                        Button(onClick = { /*TODO*/ },
-                            modifier= Modifier
+                        Button(
+                            onClick = { /*TODO*/ },
+                            modifier = Modifier
                                 .width(187.dp)
                                 .height(48.dp),
                             colors = ButtonDefaults.buttonColors(Color(223, 251, 213)),
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
-                                Text(text = "RDS",
+                                Text(
+                                    text = "RDS",
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 24.sp
                                 )
@@ -151,4 +163,5 @@ fun HomeScreen() {
             }
         }
     }
+}
 
