@@ -18,7 +18,7 @@
 </div>
 
 A atividade tem como objetivo integrar as disciplinas de INDMO (Programação interface de dispositivos móveis) e PWBE (Programação web Back-end) e do curso de desenvolvimento de sistemas do SENAI Jandira.
-O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto o back-end como o front-end.
+O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto o back-end como o mobile.
 
 <div>
   <img src="./img/logo-image.png" align="left" width="40" align="center"/>
