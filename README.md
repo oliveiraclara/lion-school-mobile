@@ -24,7 +24,7 @@ O projeto é o gerenciamento da escola Lion School, deverá ser realizado tanto 
   <img src="./img/logo-image.png" align="left" width="40" align="center"/>
    <h1>DESIGN</h1>   
 </div>
-O Layout deste site foi baseado no Figma. 
+O Layout deste app foi baseado no Figma. 
 
 ![Figma](./img/figma.png)
 [Link do Figma](https://www.figma.com/file/KsNq9fEu4NCMIsksObZdqx/Lion-School-(Resposividade)-(Copy)?type=design&node-id=0-1&t=ffo1qC3h1Ujyr4eA-0)
