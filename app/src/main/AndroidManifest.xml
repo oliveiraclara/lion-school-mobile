@@ -11,31 +11,43 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LionSchool"
+        android:theme="@style/Theme.LionSchoolMobile"
         tools:targetApi="31">
         <activity
-            android:name=".InfoStudent"
+            android:name=".gui.ui.theme.Sipport"
             android:exported="false"
-            android:label="@string/title_activity_info_student"
-            android:theme="@style/Theme.LionSchool" />
-        <activity
-            android:name=".StudentInfo"
-            android:exported="false" />
-        <activity
-            android:name=".Support"
-            android:exported="false"
-            android:label="@string/title_activity_support"
-            android:theme="@style/Theme.LionSchool" />
-        <activity
-            android:name=".Courses"
-            android:exported="false"
-            android:label="@string/title_activity_courses"
-            android:theme="@style/Theme.LionSchool" />
+            android:label="@string/title_activity_sipport"
+            android:theme="@style/Theme.LionSchoolMobile" />
         <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.LionSchoolMobile" />
+        <activity
+            android:name=".gui.Support"
+            android:exported="false"
+            android:label="@string/title_activity_support"
+            android:theme="@style/Theme.LionSchoolMobile" />
+        <activity
+            android:name=".gui.SelectedStudentActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.LionSchoolMobile" />
+        <activity
+            android:name=".gui.SelectedCurso"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.LionSchoolMobile" />
+        <activity
+            android:name=".gui.CursosActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.LionSchoolMobile" />
+        <activity
+            android:name=".gui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.LionSchool">
+            android:theme="@style/Theme.LionSchoolMobile">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
